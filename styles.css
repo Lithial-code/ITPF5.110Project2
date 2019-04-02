@@ -1,4 +1,5 @@
 th,td{
+  min-width: 80px;
   width: auto;
   height: 30px;
   border: 1px solid black;
