@@ -44,30 +44,55 @@ function PassOrFail(totalGrade) {
     }
 }
 
-function AddRow() {
-    var numberOfCells = 5
-    // var table = document.getElementById("table").children.namedItem("tBody");
+///
+///GUi Methods Section
+///
+function AddRow(numberOfCells) {
+    //get table element. Im using ID because theres only one
     var table = document.getElementById("table");
+    //adds a new row at the bottom
     var newRow = table.insertRow(-1);
+    //add a new content editable cell once per loop.
+    //Loop number is based on variable passed in on html page
     for (var i = 0; i < numberOfCells; i++) {
-        var newCell = newRow.insertCell(i).setAttribute("contentEditable", "true");;
+        var newCell = newRow.insertCell(i).setAttribute("contentEditable", "true");
     } 
+    //insert a new cell at the end of the row for the delete button
+    //i called this out here for ease of access
+    console.log(i);     //apparently JS scope is weird and i still = 5 out here
     var btnCell = newRow.insertCell(i);
+    //call the add button method to create the delete button and then
+    //put it in the cell at the end.
     btnCell.appendChild(AddDeleteButton(btnCell));
 }
 
+//function to add the delete button 
 function AddDeleteButton(btnCell){
     var btn = document.createElement('input');
     btn.type = "button";
     btn.className = "btn";
-    btn.value = "X";
-    btn.onclick = function(){DeleteCurrentRow(btnCell)};
+    //sets the test in the button
+    btn.value = "X"; 
+    //sets the function for when the button is clicked.
+    btn.onclick = function(){DeleteCurrentRow(btnCell)}; 
    return btn;
 }
+//function called when the delete button is called.
 function DeleteCurrentRow(btnCell){
+    //debug console log
     console.log("delete me");
+    //get the buttons parent which is the row
     var parent = btnCell.parentNode;
-    console.log(parent.parentNode.removeChild(parent));
+  
+    //debug for row count
+    //console.log(parent.parentNode.children.length);
+    // check if we have 3 or more rows in the table.
+    //this is so we always have one row in the table
+    if(parent.parentNode.children.length >=3){
+        //go up one more level and then remove the whole row
+    parent.parentNode.removeChild(parent);
+    }
+   
 
 }
 //console for testing
