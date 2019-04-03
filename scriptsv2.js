@@ -53,9 +53,10 @@ function GradePaper(paper){
 function PassChecker(paper) {
     return paper.totalMark > 50?"pass":"fail";
 }
+//GUI START MAYBE
 
 
-
+//MAIN() RUN FROM HERE
 for(var i = 0; i < IntroToProgramming.assignments.length; i++)
 {
     IntroToProgramming.assignments[i] = MarkAssignment(IntroToProgramming.assignments[i]);  
@@ -68,4 +69,4 @@ for(var i = 0; i < IntroToProgramming.assignments.length; i++)
     var assignment = IntroToProgramming.assignments[i];
     console.log(`For ${assignment.name} You scored ${assignment.mark}/${assignment.totalmarksavailable} adding ${assignment.marksForThis}% to your paper score`);
 }
-console.log(`For ${IntroToProgramming.class} you scored ${IntroToProgramming.totalMark}% and you ${IntroToProgramming.pass} with a ${IntroToProgramming.gra}`);
+console.log(`For ${IntroToProgramming.class} you scored ${IntroToProgramming.totalMark}% and you ${IntroToProgramming.pass} with a ${IntroToProgramming.grade}`);
