@@ -3,7 +3,7 @@ Assignment 2 for intro to programming
 
 Task List  
 *Application Description*  
- [ ] Create Application using javascript that tracks assessments for a single paper  
+- [ ] Create Application using javascript that tracks assessments for a single paper  
  [ ] Requires student to enter the **assessment's weighting and assessment's mark** and their **submission mark** for each assessment.  
  [ ] The tool will calculate the submission percentage and translate the percentage to the **submission grade**  
  [ ] Once the Student has finished inputting the data the tool will then report on the students performance and provide a guide for the remained of the uncompleted assessments  
