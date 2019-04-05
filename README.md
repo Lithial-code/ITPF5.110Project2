@@ -4,30 +4,30 @@ Assignment 2 for intro to programming
 Task List  
 *Application Description*  
 - [ ] Create Application using javascript that tracks assessments for a single paper  
-- [ ] Requires student to enter the **Assessment's Weighting and Assessment's Mark** and their **Submission Mark** for each assessment.  
-- [ ] The tool will calculate the Submission Percentage and translate the Percentage to the **submission Grade**  
-- [ ] Once the Student has finished inputting the data the tool will then report on the students performance and provide a guide for the remained of the uncompleted assessments  
+- [x] Requires student to enter the **Assessment's Weighting and Assessment's Mark** and their **Submission Mark** for each assessment.  
+- [x] The tool will calculate the Submission Percentage and translate the Percentage to the **submission Grade**  
+- [x] Once the Student has finished inputting the data the tool will then report on the students performance and provide a guide for the remained of the uncompleted assessments  
 - [ ] The report should include the students **Current Paper Percentage**, the students **Current Paper Grade**, the students **Paper Status** and the **Minimum Target Percentage** to pass the remained of the paper   
 
 *Paper Percentage*  
-- [ ] **Submission Percentage** is **Assessment Weighting** x **Submission Mark** / **Assessment Mark**  
-- [ ] **Paper Percentage** is the sum of the above from all papers  
+- [x] **Submission Percentage** is **Assessment Weighting** x **Submission Mark** / **Assessment Mark**  
+- [x] **Paper Percentage** is the sum of the above from all papers  
 
 *Paper Status*  
 
-- [ ] **Paper Status** is pass or fail which is 50%  
+- [x] **Paper Status** is pass or fail which is 50%  
 
 *Translate to Grade*  
 
-- [ ] **Grade** is represented by a letter according to the chart  
+- [x] **Grade** is represented by a letter according to the chart  
 
 *User Input*  
 
-- [ ] Implement a UI that allows the student to input the details of assessments they have completed and been Graded on.   
+- [x] Implement a UI that allows the student to input the details of assessments they have completed and been Graded on.   
 - [ ] The User should be asked to input:  
-    - [ ] **Assessment Weighting** towards the papers overall Grade  
-    - [ ] **Assessment Mark** which is the total number of marks you can get for this assessment  
-    - [ ] **Submission Mark** which is the number of marks the student got  
+    - [x] **Assessment Weighting** towards the papers overall Grade  
+    - [x] **Assessment Mark** which is the total number of marks you can get for this assessment  
+    - [x] **Submission Mark** which is the number of marks the student got  
 - [ ] The interface should validate the user input.  
     - [ ] Non valid input should prompt the user to answer again.  
     - [ ] Valid Input Includes  
@@ -38,7 +38,7 @@ Task List
         - [ ] **Assessment Weighting**  
         - [ ] **Assessment Mark**  
         - [ ] **Submission Mark**  
-- [ ] The user interface should be inplemented as a console application  
+- [x] The user interface should be inplemented as a console application  
 - [ ] **Optional** Inplement a html/css gui   
 
 *Reporting*  
