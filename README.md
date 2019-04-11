@@ -6,7 +6,7 @@ Task List
 - [ ] Create Application using javascript that tracks assessments for a single paper  
 - [x] Requires student to enter the **Assessment's Weighting and Assessment's Mark** and their **Submission Mark** for each assessment.  
 - [x] The tool will calculate the Submission Percentage and translate the Percentage to the **submission Grade**  
-- [x] Once the Student has finished inputting the data the tool will then report on the students performance and provide a guide for the remained of the uncompleted assessments  
+- [ ] Once the Student has finished inputting the data the tool will then report on the students performance and provide a guide for the remained of the uncompleted assessments  
 - [ ] The report should include the students **Current Paper Percentage**, the students **Current Paper Grade**, the students **Paper Status** and the **Minimum Target Percentage** to pass the remained of the paper   
 
 *Paper Percentage*  
