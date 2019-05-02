@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class = "inputs">
+        <div>
+            <label for="Name">Name</label>
+            <input type="text" name="Name" id="Name">
+        </div>
+        <div>
+            <label for="Weighting">Weighting</label>
+            <input type="number" name="Weighting" id="Weighting">
+        </div>
+        <div>
+            <label for="SubMark">Submission Mark</label>
+            <input type="number" name="SubMark" id="SubMark">
+        </div>
+        <div>
+            <label for="Name">Assessment Mark</label>
+            <input type="number" name="AssessMark" id="AssessMark">
+        </div>
+        <div>
+            <button type="submit" onclick="AddFromInputsToArray()">Submit</button>
+        </div>
+    </div>
+
+    <div class = "table"></div>
+    <table id="paperTable">
+    </table>
+    <script src="optional.js"></script>
+</body>
+
+</html>
