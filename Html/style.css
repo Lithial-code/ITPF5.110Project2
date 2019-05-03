@@ -10,14 +10,24 @@ label{
 #inputs{
   padding: 1em 1em 1em 1em;
 }
+select, option{
+  width: 173px;
+  text-align: right;
+}
 table{
   padding: 1em;
   margin: 2em;
   border:thick solid #e3e3e3;
 }
+tr{
+  border: 1px solid;
+}
+th{
+  padding: 1em 1em 1em 1em;
+  text-align: center ;
+}
 td{
-text-align: center;
-}
-thead{
-  text-align: left;
-}
+  padding: 1em;
+  text-align: center;
+  }
+ 

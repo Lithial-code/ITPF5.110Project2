@@ -1,6 +1,7 @@
 //global variables for grade comparision
 var possibleGrades = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "E"];
 var gradePercentages = [90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 0];
+var AllPapers = [];
 var Assessments = [{
         "name": "Clicker Game", //name
         "assessmentWeighting": 20, //assessment weighting
@@ -34,7 +35,8 @@ var IntroToProgramming = {
     "numOfAssessments": 3, // to make the test data consistant with the created papers
     "pass": false //boolean that shows if you've passed the paper yet or not
 }
-var BetterKeys = ["Name", "Assessment Weighting", "Submission Mark", "Assessment Mark", "Submission Percentage", "Assessment Grade"]
+var BetterKeys = [" Name ", " Weighting ", " Mark ", "/ Mark", " % ", " Grade "]
+
 function AssObj(name, assessmentWeighting, submissionMark, assessmentMark) {
     this.name = name;
     this.assessmentWeighting = assessmentWeighting;
@@ -42,36 +44,6 @@ function AssObj(name, assessmentWeighting, submissionMark, assessmentMark) {
     this.assessmentMark = assessmentMark;
     this.submissionPercentage = 0;
     this.assessmentGrade = "";
-}
-function AddFromInputsToArray() {
-    var name = document.getElementById("Name");
-    var weighting = document.getElementById("Weighting");
-    var submissionMark = document.getElementById("SubMark");
-    var assessmentMark = document.getElementById("AssessMark");
-    var assessment = new AssObj(name.value,weighting.value,submissionMark.value,assessmentMark.value);
-    Assessments.push(assessment);
-    AddNewAssess(table);
-    GenerateTableHead(table, BetterKeys);
-}
-
-function GenerateTableHead(table, data) {
-    let thead = table.createTHead();
-    let row = thead.insertRow();
-    for (var key of data) {
-        let th = document.createElement("th");
-        let text = document.createTextNode(key);
-        th.appendChild(text);
-        row.appendChild(th);
-    }
-}
-
-function AddToTable(table, data) {
-    let row = table.insertRow();
-    for (element in data) {
-        let cell = row.insertCell();
-        let text = document.createTextNode(data[element]);
-        cell.appendChild(text);
-    }
 }
 //math for the submission percentage (Assessment Weighting x Submission Mark / Assessment Mark)
 function AssignmentPercentage(assessmentWeighting, submissionMark, maxMark) {
@@ -117,19 +89,61 @@ function AssessmentGrader(assessment) {
 function PassChecker(paper) {
     return paper.totalMark > 50 ? "pass" : "fail";
 }
-
-function AddNewAssess(table){
+function ClearTable(table){
     while(table.hasChildNodes())
     {
         table.removeChild(table.firstChild);
     }
-    for (var i = 0; i < Assessments.length; i++) {
-        Assessments[i]["Assessment-Grade"] = AssessmentGrader(Assessments[i]);
-        AddToTable(table, Assessments[i]);
+}
+function AddNewAssess(table){
+    var assessments = AllPapers.assessments;
+    for (var i = 0; i < assessments.length; i++) {
+        assessments[i]["assessmentGrade"] = AssessmentGrader(Assessments[i]);
+        AddToTable(table, assessments[i]);
+    }
+}
+function PopulatePapers(){
+    var dropDown = document.getElementById("PapersDropdown");
+    for(paper in AllPapers){
+        var option = document.createElement("option");
+        option.setAttribute("value",AllPapers[paper].name);
+        option.innerHTML = AllPapers[paper].name;
+        dropDown.appendChild(option);
+    }
+}
+function AddFromInputsToArray() {
+    var name = document.getElementById("Name");
+    var weighting = document.getElementById("Weighting");
+    var submissionMark = document.getElementById("SubMark");
+    var assessmentMark = document.getElementById("AssessMark");
+    var assessment = new AssObj(name.value,weighting.value,submissionMark.value,assessmentMark.value);
+    Assessments.push(assessment);
+    AddNewAssess(table);
+    GenerateTableHead(table, BetterKeys);
+}
+
+function GenerateTableHead(table, data) {
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for (var key of data) {
+        let th = document.createElement("th");
+        let text = document.createTextNode(key);
+        th.appendChild(text);
+        row.appendChild(th);
     }
 }
 
+function AddToTable(table, data) {
+    let row = table.insertRow();
+    for (element in data) {
+        let cell = row.insertCell();
+        let text = document.createTextNode(data[element]);
+        cell.appendChild(text);
+    }
+}
+//AllPapers.push(IntroToProgramming);
+PopulatePapers();
 var table = document.getElementById('paperTable');
 let data = BetterKeys;
-AddNewAssess(table);
 GenerateTableHead(table, data);
+AddNewAssess(table);
